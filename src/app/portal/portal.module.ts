@@ -4,12 +4,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthModule } from '../auth/auth.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { TermsComponent } from './terms/terms.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TermsComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TermsComponent
   ]
 })
 export class PortalModule { }
