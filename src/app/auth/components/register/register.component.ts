@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -12,10 +11,10 @@ export class RegisterComponent implements OnInit {
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.email, Validators.required]),
     country: new FormControl('', [Validators.required]),
     instrument: new FormControl('', [Validators.required]),
-    conditionsAgree: new FormControl('', [Validators.required])
+    conditionsAgree: new FormControl('', [Validators.requiredTrue])
   });
 
   constructor() { }
@@ -27,13 +26,17 @@ export class RegisterComponent implements OnInit {
     console.log("hello");
   }
 
-  isEmailValid(){
-    return this.userForm.value.email.length == 0 || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.userForm.value.email);
-  }
+  // isEmailValid(){
+  //   return this.userForm.value.email.length == 0 || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.userForm.value.email);
+  // }
 
-  isFormValid(){
-    debugger;
-    return this.userForm.value.conditionsAgree && this.isEmailValid() && this.userForm.value.email.length > 0;
+  /*isFormValid(){
+    // return this.userForm.value.conditionsAgree && this.isEmailValid() && this.userForm.value.email.length > 0;
+    return this.userForm.valid;
+  }*/
+  
+  test(){
+    console.log(this.userForm);
   }
 
 }

@@ -14,7 +14,7 @@
         <div class="field">
           <label class="label">Username</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Username" formControlName="name" required>
+            <input class="input" type="text" placeholder="Username" formControlName="name">
           </div>
         </div>
 
@@ -28,11 +28,10 @@
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input [ngClass]="{'is-danger': !isEmailValid(), 'input' : true === true}" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
-            <span class="icon is-small is-right">
-              <i class="fas fa-exclamation-triangle"></i>
-            </span>
-            <p class="help is-danger" *ngIf="!isEmailValid()">This email is invalid</p>
+            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.email.errors }" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
+            <div *ngIf="userForm.controls.email.errors && userForm.controls.email.errors.email">
+              <p class="help is-danger">This email is invalid</p>
+            </div>
           </div>
         </div>
 
@@ -40,6 +39,7 @@
           <label class="label">Country</label>
           <div class="control">
             <div class="select">
+              <!-- TODO get instrument from country object list -->
               <select  formControlName="country">
                 <option selected>Country</option>
                 <option value="FR">France</option>
@@ -61,8 +61,9 @@
         <div class="field">
           <label class="label">Your instrument</label>
           <div class="select is-multiple">
+            <!-- TODO get instrument from instrument object list -->
             <select multiple size="7" formControlName="instrument">
-              <option value="Yukulele">Yukulele</option>
+              <option value="Ukulele">Ukulele</option>
               <option value="Guitar">Guitar</option>
               <option value="Piano">Piano</option>
               <option value="Saxophon">Saxophon</option>
@@ -84,10 +85,10 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link" [disabled]="!isFormValid()">Submit</button> 
+            <button class="button is-link" [disabled]="userForm.invalid">Submit</button> 
           </div>
           <div class="control">
-            <button class="button is-link is-light">Cancel</button>
+            <button class="button is-link is-light" (click)="test()">Cancel</button>
           </div>
         </div>
         
