@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,6 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent,
