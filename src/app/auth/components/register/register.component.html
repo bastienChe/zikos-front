@@ -42,17 +42,10 @@
           <label class="label">Country</label>
           <div class="control">
             <div class="select">
-              <!-- TODO get instrument from country object list -->
               <select  formControlName="country">
-                <option selected>Country</option>
-                <option value="FR">France</option>
-                <option value="ES">Spain</option>
-                <option value="BE">Belgium</option>
-                <option value="CH">Switzerland</option> 
-                <option value="EN">England</option>
-                <option value="SC">Scotland</option>
-                <option value="WA">Wales</option>
-                <option value="IR">Ireland</option>
+                <option *ngFor="let country of countryList" [value]="country.id">
+                  {{country.name}}
+                </option>
               </select>
             </div>
             <span class="icon is-small is-left">
