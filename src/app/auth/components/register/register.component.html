@@ -21,14 +21,17 @@
         <div class="field">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input" type="password" placeholder="***" formControlName="password">
+            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.password.errors  && userForm.controls.password.touched}" type="password" placeholder="***" formControlName="password">            
+            <div *ngIf="userForm.controls.password.errors && userForm.controls.password.touched">
+              <p class="help is-danger">Your password should contains at least 6 characters</p>
+            </div>
           </div>
         </div>
 
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.email.errors }" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
+            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.email.errors && userForm.controls.email.touched }" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
             <div *ngIf="userForm.controls.email.errors && userForm.controls.email.errors.email">
               <p class="help is-danger">This email is invalid</p>
             </div>
@@ -88,7 +91,7 @@
             <button class="button is-link" [disabled]="userForm.invalid">Submit</button> 
           </div>
           <div class="control">
-            <button class="button is-link is-light" (click)="test()">Cancel</button>
+            <button class="button is-link is-light">Cancel</button>
           </div>
         </div>
         

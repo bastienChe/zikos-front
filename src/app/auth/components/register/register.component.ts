@@ -10,7 +10,7 @@ export class RegisterComponent implements OnInit {
 
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     email: new FormControl('', [Validators.email, Validators.required]),
     country: new FormControl('', [Validators.required]),
     instrument: new FormControl('', [Validators.required]),
@@ -23,20 +23,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("hello");
-  }
-
-  // isEmailValid(){
-  //   return this.userForm.value.email.length == 0 || /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.userForm.value.email);
-  // }
-
-  /*isFormValid(){
-    // return this.userForm.value.conditionsAgree && this.isEmailValid() && this.userForm.value.email.length > 0;
-    return this.userForm.valid;
-  }*/
-  
-  test(){
-    console.log(this.userForm);
+    if(this.userForm.valid){
+      console.log(this.userForm);
+    }
   }
 
 }
