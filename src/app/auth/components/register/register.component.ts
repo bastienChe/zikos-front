@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   countryList : Country[];
   instrumentList : Instrument[];
   faCoffee = faCoffee;
+  largeLogo: any = "assets/images/brand/brand-logo-450-250.jpg";  
 
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
