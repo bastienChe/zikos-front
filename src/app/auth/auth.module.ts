@@ -6,6 +6,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CountryModule } from '../country/country.module';
+import { InstrumentModule } from '../instrument/instrument.module';
 
 
 
@@ -15,7 +17,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CountryModule,
+    InstrumentModule,
+    CoreModule
   ],
   exports: [
     LoginComponent,

@@ -1,5 +1,5 @@
   
-import { Instrument } from './Instrument';
+import { Instrument } from '../model/Instrument';
 
 export const INSTRUMENT_LIST: Instrument[] = [
 

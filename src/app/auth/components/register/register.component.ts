@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CountryService } from 'src/app/core/country/services/country.service';
-import { Country } from 'src/app/core/country/County';
-import { InstrumentService } from 'src/app/core/instrument/services/instrument.service';
-import { Instrument } from 'src/app/core/instrument/Instrument';
+import { CountryService } from 'src/app/country/services/country.service';
+import { Country } from 'src/app/country/model/Country';
+import { InstrumentService } from 'src/app/instrument/services/instrument.service';
+import { Instrument } from 'src/app/instrument/model/Instrument';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

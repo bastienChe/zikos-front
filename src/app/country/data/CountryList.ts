@@ -1,5 +1,5 @@
   
-import { Country } from './County';
+import { Country } from '../model/Country';
 
 export const COUNTRY_LIST: Country[] = [
     { id: "FR", name: "France", code: "FR", flag: '' },
