@@ -5,6 +5,7 @@ import { Country } from 'src/app/core/country/County';
 import { InstrumentService } from 'src/app/core/instrument/services/instrument.service';
 import { Instrument } from 'src/app/core/instrument/Instrument';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { AuthenticationService } from 'src/app/auth/services/authentication.service'
 
 @Component({
   selector: 'app-register',
@@ -19,15 +20,15 @@ export class RegisterComponent implements OnInit {
   largeLogo: any = "assets/images/brand/brand-logo-450-250.jpg";  
 
   userForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    email: new FormControl('', [Validators.email, Validators.required]),
-    country: new FormControl('', [Validators.required, Validators.pattern('^((?!--).)*$')]),
-    instrument: new FormControl('', [Validators.required]),
-    conditionsAgree: new FormControl('', [Validators.requiredTrue])
+    name: new FormControl('nev' + Math.floor(Math.random() * 100000), [Validators.required]),
+    password: new FormControl('Et180692', [Validators.required, Validators.minLength(6)]),
+    email: new FormControl('nevin16@hotmail.fr', [Validators.email, Validators.required]),
+    country: new FormControl('FR', [Validators.required, Validators.pattern('^((?!--).)*$')]),
+    instrument: new FormControl('Ukulele', [Validators.required]),
+    conditionsAgree: new FormControl(true, [Validators.requiredTrue])
   });
 
-  constructor(private countryService: CountryService, private instrumentService : InstrumentService) { }
+  constructor(private countryService: CountryService, private instrumentService : InstrumentService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.getCountries();
@@ -47,6 +48,11 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     if(this.userForm.valid){
       console.log(this.userForm);
+      this.authService.signUp(this.userForm.value).then(user => {
+        console.log('comp res : ' + user);
+      }).catch(e => {
+        console.log(e);
+      })
     }
   }
 

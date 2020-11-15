@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zikosfront-dev-153844-authRole",
+      "UnauthRoleArn": "arn:aws:iam::721847942138:role/amplify-zikosfront-dev-153844-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::721847942138:role/amplify-zikosfront-dev-153844-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-zikosfront-dev-153844-deployment",
+      "UnauthRoleName": "amplify-zikosfront-dev-153844-unauthRole",
+      "StackName": "amplify-zikosfront-dev-153844",
+      "StackId": "arn:aws:cloudformation:eu-west-1:721847942138:stack/amplify-zikosfront-dev-153844/452d0f60-2750-11eb-8e21-0a23af1c9dca",
+      "AmplifyAppId": "dh4od8rcwe5f6"
+    },
+    "categories": {
+      "auth": {
+        "zikosfront8e415cb2": {}
+      }
+    }
+  }
+}

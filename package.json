@@ -23,6 +23,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "ansi-colors": "^4.1.1",
+    "aws-amplify": "^3.3.8",
+    "aws-amplify-angular": "^5.0.37",
     "bulma": "^0.9.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
