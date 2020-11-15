@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CountryService } from 'src/app/core/country/services/country.service';
 import { Country } from 'src/app/core/country/County';
+import { InstrumentService } from 'src/app/core/instrument/services/instrument.service';
+import { Instrument } from 'src/app/core/instrument/Instrument';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +14,8 @@ import { Country } from 'src/app/core/country/County';
 export class RegisterComponent implements OnInit {
 
   countryList : Country[];
+  instrumentList : Instrument[];
+  faCoffee = faCoffee;
 
   userForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -21,15 +26,21 @@ export class RegisterComponent implements OnInit {
     conditionsAgree: new FormControl('', [Validators.requiredTrue])
   });
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService, private instrumentService : InstrumentService) { }
 
   ngOnInit(): void {
     this.getCountries();
+    this.getInstruments();
   }
 
   getCountries(): void {
     this.countryService.getCountries()
     .subscribe(countryList => this.countryList = countryList);
+  }
+
+  getInstruments(): void {
+    this.instrumentService.getInstruments()
+    .subscribe(instrumentList => this.instrumentList = instrumentList);
   }
 
   onSubmit() {

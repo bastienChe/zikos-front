@@ -5,7 +5,7 @@
       <p>Inscris toi stp !</p>
       <p>En vrai on est des mecs cools et on va pas partager tes infos personnelles promis.</p>
       <p>Sauf si on nous propose beaucoup d'argent mais c'est pas demain la veille</p>
-      <p>:)</p>
+      <p><fa-icon [icon]="faCoffee"></fa-icon></p>
     </div>
     <div class="column">
 
@@ -44,7 +44,7 @@
             <div class="select">
               <select  formControlName="country">
                 <option *ngFor="let country of countryList" [value]="country.id">
-                  {{country.name}}
+                  {{country.name}} 
                 </option>
               </select>
             </div>
@@ -55,17 +55,13 @@
         </div>
 
         <div class="field">
-          <label class="label">Your instrument</label>
+          <label class="label">Your instruments</label>
           <div class="select is-multiple">
             <!-- TODO get instrument from instrument object list -->
             <select multiple size="7" formControlName="instrument">
-              <option value="Ukulele">Ukulele</option>
-              <option value="Guitar">Guitar</option>
-              <option value="Piano">Piano</option>
-              <option value="Saxophon">Saxophon</option>
-              <option value="Flute">Flute</option>
-              <option value="Violin">Violin</option>
-              <option value="Trombon">Trombon</option>
+              <option *ngFor="let instrument of instrumentList"  value="{{instrument.id}} ">
+                {{instrument.name}} 
+              </option>
             </select>
           </div>
         </div>

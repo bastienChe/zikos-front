@@ -1,7 +1,7 @@
   
 import { Instrument } from './Instrument';
 
-export const ISNTRUMENT_LIST: Instrument[] = [
+export const INSTRUMENT_LIST: Instrument[] = [
 
     {id: 1, name: "Guitar", description: "", icon: "guitar"},
     {id: 2, name: "Piano", description: "", icon: "piano"},

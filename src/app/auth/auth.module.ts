@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -13,11 +14,13 @@ import { CoreModule } from '../core/core.module';
   imports: [
     CommonModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   exports: [
     LoginComponent,
     RegisterComponent
   ]
 })
-export class AuthModule { }
+export class AuthModule { 
+}
