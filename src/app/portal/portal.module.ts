@@ -5,13 +5,17 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthModule } from '../auth/auth.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { TermsComponent } from './terms/terms.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    TermsComponent
+    TermsComponent,
+    WelcomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { TermsComponent } from './terms/terms.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    TermsComponent
+    TermsComponent,
+    WelcomeComponent,
+    PageNotFoundComponent
   ]
 })
 export class PortalModule { }
