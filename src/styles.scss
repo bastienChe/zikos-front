@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
+$green: #00654f;
+$primary: $green;
+
+
+body{
+    background-color: #89d0c1;
+    height: 100vh;
+}
+
+.has-radius-box{
+    border-radius: 6px;
+}
+
+// Import only what you need from Bulma
+@import '~node_modules/bulma/sass/utilities/_all';
+@import '~node_modules/bulma/sass/base/_all';
+@import '~node_modules/bulma/sass/elements/button';
+@import '~node_modules/bulma/sass/elements/container';
+@import '~node_modules/bulma/sass/elements/title';
+@import '~node_modules/bulma/sass/form/_all';
+@import '~node_modules/bulma/sass/components/navbar';
+@import '~node_modules/bulma/sass/layout/hero';
+@import '~node_modules/bulma/sass/layout/section';

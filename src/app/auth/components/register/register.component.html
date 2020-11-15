@@ -1,17 +1,15 @@
 <div class="container">
-  <div class="columns">
-    <div class="column mt-6">
-
-      <img [src]="largeLogo" class="mt-6"/>
-      <p>Inscris toi stp !</p>
-      <p>En vrai on est des mecs cools et on va pas partager tes infos personnelles promis.</p>
-      <p>Sauf si on nous propose beaucoup d'argent mais c'est pas demain la veille</p>
-      <p><fa-icon [icon]="faCoffee"></fa-icon></p>
+  <div class="columns mt-6">
+    <div class="column is-4 is-offset-2">
+      <p class="built-for mb-4">Built for <br> Musicians</p>
+      <p>En vrai on est des <b>mecs cools</b> et on va pas partager tes infos personnelles promis.</p>
+      <p>Sauf si on nous propose <b>beaucoup d'argent</b> mais c'est pas demain la veille</p>
+      <!-- <p><fa-icon [icon]="faCoffee"></fa-icon></p> -->
     </div>
     
-    <div class="column mt-6 mb-6">
+    <div class="column has-background-white	has-radius-box is-3">
 
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="p-1">
 
         <div class="field">
           <label class="label">Username</label>
@@ -40,7 +38,7 @@
           </div>
         </div>
 
-        <div class="field mt-4">
+        <!-- <div class="field mt-4">
           <label class="label">Country</label>
           <div class="control">
             <div class="select">
@@ -59,14 +57,13 @@
         <div class="field mt-4">
           <label class="label">Your instruments</label>
           <div class="select is-multiple">
-            <!-- TODO get instrument from instrument object list -->
             <select multiple size="7" formControlName="instrument">
               <option *ngFor="let instrument of instrumentList"  value="{{instrument.id}} ">
                 {{instrument.name}} 
               </option>
             </select>
           </div>
-        </div>
+        </div> -->
 
         <div class="field mt-4">
           <div class="control">
@@ -78,12 +75,9 @@
         </div>
 
         
-        <div class="field is-grouped mt-6">
-          <div class="control mr-6">
-            <button class="button is-link" [disabled]="userForm.invalid">Submit</button> 
-          </div>
-          <div class="control">
-            <button class="button is-link is-light" routerLink="/">Cancel</button>
+        <div class="columns">
+          <div class="column is-12">
+            <button class="button is-primary is-large is-fullwidth" [disabled]="userForm.invalid">Submit</button> 
           </div>
         </div>
         
