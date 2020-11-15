@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="columns">
+  <div class="columns mt-6 mb-6">
 
     <div class="column"></div>
     <div class="column">
@@ -21,15 +21,22 @@
           </div>
         </div>
 
-        <div class="field is-grouped is-expanded is-centered">
-          <div class="control">
-            <button class="button is-link" [disabled]="userForm.invalid">Submit</button>
-          </div>
+        <div class="field mt-6">
+          <nav class="level">
+            <div class="level-left">
+              <div class="control">
+                <button class="button is-link" [disabled]="userForm.invalid">Submit</button>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="control">
+                <button class="button is-link is-light" routerLink="/">Cancel</button>
+              </div>
+            </div>
+          </nav>
 
-          <div class="control">
-            <button class="button is-link is-light" routerLink="/">Cancel</button>
-          </div>
         </div>
+
       </form>
 
     </div>

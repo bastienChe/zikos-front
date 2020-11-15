@@ -1,14 +1,15 @@
 <div class="container">
   <div class="columns">
-    <div class="column">
+    <div class="column mt-6">
 
-      <img [src]="largeLogo" />
+      <img [src]="largeLogo" class="mt-6"/>
       <p>Inscris toi stp !</p>
       <p>En vrai on est des mecs cools et on va pas partager tes infos personnelles promis.</p>
       <p>Sauf si on nous propose beaucoup d'argent mais c'est pas demain la veille</p>
       <p><fa-icon [icon]="faCoffee"></fa-icon></p>
     </div>
-    <div class="column">
+    
+    <div class="column mt-6 mb-6">
 
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
@@ -19,7 +20,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-4">
           <label class="label">Password</label>
           <div class="control">
             <input class="input" [ngClass]="{ 'is-danger': userForm.controls.password.errors  && userForm.controls.password.touched}" type="password" placeholder="***" formControlName="password">            
@@ -29,7 +30,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-4">
           <label class="label">Email</label>
           <div class="control">
             <input class="input" [ngClass]="{ 'is-danger': userForm.controls.email.errors && userForm.controls.email.touched }" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
@@ -39,7 +40,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-4">
           <label class="label">Country</label>
           <div class="control">
             <div class="select">
@@ -55,7 +56,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-4">
           <label class="label">Your instruments</label>
           <div class="select is-multiple">
             <!-- TODO get instrument from instrument object list -->
@@ -67,7 +68,7 @@
           </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-4">
           <div class="control">
             <label class="checkbox">
               <input type="checkbox" formControlName="conditionsAgree">
@@ -76,8 +77,9 @@
           </div>
         </div>
 
-        <div class="field is-grouped">
-          <div class="control">
+        
+        <div class="field is-grouped mt-6">
+          <div class="control mr-6">
             <button class="button is-link" [disabled]="userForm.invalid">Submit</button> 
           </div>
           <div class="control">
