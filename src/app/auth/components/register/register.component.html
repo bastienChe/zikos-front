@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="columns mt-6">
+    <div class="column is-4 is-offset-2">
+      <p class="built-for mb-4">Built for <br> Musicians</p>
+      <p>En vrai on est des <b>mecs cools</b> et on va pas partager tes infos personnelles promis.</p>
+      <p>Sauf si on nous propose <b>beaucoup d'argent</b> mais c'est pas demain la veille</p>
+      <!-- <p><fa-icon [icon]="faCoffee"></fa-icon></p> -->
+    </div>
+    
+    <div class="column has-background-white	has-radius-box is-3">
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="p-1">
+
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Username" formControlName="name">
+          </div>
+        </div>
+
+        <div class="field mt-4">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.password.errors  && userForm.controls.password.touched}" type="password" placeholder="***" formControlName="password">            
+            <div *ngIf="userForm.controls.password.errors && userForm.controls.password.touched">
+              <p class="help is-danger">Your password should contains at least 6 characters</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="field mt-4">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" [ngClass]="{ 'is-danger': userForm.controls.email.errors && userForm.controls.email.touched }" type="email" placeholder="your@mail.com" value="your@mail.com" formControlName="email">
+            <div *ngIf="userForm.controls.email.errors && userForm.controls.email.errors.email">
+              <p class="help is-danger">This email is invalid</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="field mt-4">
+          <label class="label">Country</label>
+          <div class="control">
+            <div class="select">
+              <select  formControlName="country">
+                <option *ngFor="let country of countryList" [value]="country.id">
+                  {{country.name}} 
+                </option>
+              </select>
+            </div>
+            <span class="icon is-small is-left">
+              <i class="fas fa-globe"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field mt-4">
+          <label class="label">Your instruments</label>
+          <div class="select is-multiple">
+            <select multiple size="7" formControlName="instrument">
+              <option *ngFor="let instrument of instrumentList"  value="{{instrument.id}} ">
+                {{instrument.name}} 
+              </option>
+            </select>
+          </div>
+        </div> -->
+
+        <div class="field mt-4">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" formControlName="conditionsAgree">
+              I agree to the <a routerLink="terms" target="_blank">terms and conditions</a>
+            </label>
+          </div>
+        </div>
+
+        
+        <div class="columns">
+          <div class="column is-12">
+            <button class="button is-primary is-large is-fullwidth" [disabled]="userForm.invalid">Submit</button> 
+          </div>
+        </div>
+        
+      </form>
+
+    </div>
+  </div>
+</div>

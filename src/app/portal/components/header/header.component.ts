@@ -9,7 +9,10 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  smallLogo: any = "assets/images/brand/brand-logo-100-55.jpg";  
+
   ngOnInit(): void {
+    
   }
 
 }

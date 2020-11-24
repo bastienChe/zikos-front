@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="columns mt-6 mb-6">
+
+    <div class="column"></div>
+    <div class="column">
+
+      <img [src]="largeLogo" />
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Username" formControlName="name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="***" formControlName="password">
+          </div>
+        </div>
+
+        <div class="field mt-6">
+          <nav class="level">
+            <div class="level-left">
+              <div class="control">
+                <button class="button is-link" [disabled]="userForm.invalid">Submit</button>
+              </div>
+            </div>
+            <div class="level-right">
+              <div class="control">
+                <button class="button is-link is-light" routerLink="/">Cancel</button>
+              </div>
+            </div>
+          </nav>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="column"></div>
+  </div>
+</div>
